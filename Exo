@@ -1,0 +1,82 @@
+//Code de Chiffrement 
+#include <iostream>
+#include <string>
+
+// Fonction pour chiffrer le message selon le chiffrement César
+std::string chiffrementCesar(const std::string& message, int decalage) {
+    std::string messageChiffre = "";
+
+    for (char caractere : message) {
+        if (isalpha(caractere)) {
+            char base = (isupper(caractere)) ? 'A' : 'a';
+            messageChiffre += static_cast<char>((caractere - base + decalage) % 26 + base);
+        } else {
+            // Conserve les caractères non alphabétiques inchangés
+            messageChiffre += caractere;
+        }
+    }
+
+    return messageChiffre;
+}
+
+int main() {
+    // Demander à l'utilisateur d'entrer le message et le décalage
+    std::string message;
+    int decalage;
+
+    std::cout << "Entrez le message à chiffrer : ";
+    std::getline(std::cin, message);
+
+    std::cout << "Entrez le décalage : ";
+    std::cin >> decalage;
+
+    // Chiffrer le message
+    std::string messageChiffre = chiffrementCesar(message, decalage);
+
+    // Afficher le message chiffré
+    std::cout << "Message chiffré : " << messageChiffre << std::endl;
+
+    return 0;
+}
+
+//Code de déchiffrement
+#include <iostream>
+#include <string>
+
+// Fonction pour chiffrer le message selon le chiffrement César
+std::string chiffrementCesar(const std::string& message, int decalage) {
+    std::string messageChiffre = "";
+
+    for (char caractere : message) {
+        if (isalpha(caractere)) {
+            char base = (isupper(caractere)) ? 'A' : 'a';
+            messageChiffre += static_cast<char>((caractere - base + decalage) % 26 + base);
+        } else {
+            // Conserve les caractères non alphabétiques inchangés
+            messageChiffre += caractere;
+        }
+    }
+
+    return messageChiffre;
+}
+
+int main() {
+    // Demander à l'utilisateur d'entrer le message et le décalage
+    std::string message;
+    int decalage;
+
+    std::cout << "Entrez le message à chiffrer : ";
+    std::getline(std::cin, message);
+
+    std::cout << "Entrez le décalage : ";
+    std::cin >> decalage;
+
+    // Chiffrer le message
+    std::string messageChiffre = chiffrementCesar(message, decalage);
+
+    // Afficher le message chiffré
+    std::cout << "Message chiffré : " << messageChiffre << std::endl;
+
+    return 0;
+}
+
